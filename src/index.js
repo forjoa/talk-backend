@@ -6,6 +6,9 @@ import authRoutes from './routes/authRoutes';
 import chatRoutes from './routes/chatRoutes';
 import userRoutes from './routes/userRoutes';
 import './config/database';
+import { config } from 'dotenv';
+
+config()
 
 const app = express();
 const port = process.env.PORT || 3000;
