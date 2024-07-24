@@ -1,5 +1,5 @@
-import { db } from '../config/database';
-import { encrypt, hashPasswords } from '../utils/encryption';
+import { db } from '../config/database.js';
+import { encrypt, hashPasswords } from '../utils/encryption.js';
 
 export const loginService = async ({ username, password }) => {
     const { rows } = await db.execute({

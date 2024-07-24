@@ -1,4 +1,4 @@
-import { db } from '../config/database';
+import { db } from '../config/database.js';
 
 export const getAllUsers = async (user_id) => {
     const { rows } = await db.execute({

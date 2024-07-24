@@ -1,4 +1,4 @@
-import { getMyChats, searchUser, getConversation, insertMessage } from '../services/chatService';
+import { getMyChats, searchUser, getConversation, insertMessage } from '../services/chatService.js';
 
 export const myChats = async (req, res) => {
     const { id } = req.params;

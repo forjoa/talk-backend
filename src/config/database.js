@@ -1,8 +1,6 @@
 import { createClient } from '@libsql/client';
 
-const db = createClient({
+export const db = createClient({
     url: process.env.TURSO_DATABASE_URL || 'libsql://talk-forjoa.turso.io',
     authToken: process.env.NEXT_PUBLIC_TURSO_AUTH_TOKEN,
 });
-
-export default db;

@@ -1,4 +1,4 @@
-import { db } from '../config/database';
+import { db } from '../config/database.js';
 
 export const getMyChats = async (id) => {
     const { rows } = await db.execute({

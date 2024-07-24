@@ -2,10 +2,10 @@ import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import bodyParser from 'body-parser';
-import authRoutes from './routes/authRoutes';
-import chatRoutes from './routes/chatRoutes';
-import userRoutes from './routes/userRoutes';
-import './config/database';
+import authRoutes from './routes/authRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import './config/database.js';
 import { config } from 'dotenv';
 
 config()
@@ -22,7 +22,7 @@ app.use('/api/users', userRoutes);
 
 const httpServer = createServer(app);
 const io = new Server(httpServer);
-import socketHandlers from './socket';
+import socketHandlers from './socket.js';
 socketHandlers(io);
 
 httpServer.listen(port, () => {
