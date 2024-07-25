@@ -1,5 +1,5 @@
 import { db } from '../config/database.js';
-import { encrypt, hashPasswords } from '../utils/encryption.js';
+import { decrypt, encrypt, hashPasswords } from '../utils/encryption.js';
 import { compare } from 'bcrypt';
 
 export const loginService = async ({ username, password }) => {
@@ -38,3 +38,7 @@ export const registerService = async ({ username, fullname, password }) => {
 
     return { success: true };
 };
+
+export const getPayloadService = async ({ encrypted }) => {
+    return await decrypt(encrypted)
+}
