@@ -1,5 +1,6 @@
 import { db } from '../config/database.js';
 import { encrypt, hashPasswords } from '../utils/encryption.js';
+import { compare } from 'bcrypt';
 
 export const loginService = async ({ username, password }) => {
     const { rows } = await db.execute({
@@ -11,7 +12,7 @@ export const loginService = async ({ username, password }) => {
         return { success: false, message: 'Username is not registered' };
     }
 
-    if (!(await compare(password, rows[0].password))) {
+    if (!(compare(password, rows[0].password))) {
         return { success: false, message: 'Wrong password' };
     }
 
