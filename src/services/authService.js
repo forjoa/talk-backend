@@ -12,7 +12,7 @@ export const loginService = async ({ username, password }) => {
         return { success: false, message: 'Username is not registered' };
     }
 
-    if (!compare(password, rows[0].password)) {
+    if (!(await compare(password, rows[0].password))) {
         return { success: false, message: 'Wrong password' };
     }
 
