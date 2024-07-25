@@ -96,8 +96,29 @@ This is a backend API for Talk App built with Node.js, Express, and Socket.io. I
     }
     ```
 
-- **POST /api/auth/logout**
-  - **Description:** Logs out a user and clears the session.
+- **POST /api/auth/getPayload**
+
+  - **Description:** Returns the payload of an encrypted string.
+  - **Request Body:**
+
+    ```json
+    {
+      "encrypted": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNiwidXNlcm5hbWUiOiJqb2FxdWluIiwiZnVsbG5hbWUiOiJKb2FxdWluIFRydWppaWxvIiwicGFzc3dvcmQiOiIkMmIkMTAkd2o4OUlYeS9pLm5JUVJZaTFDdnpHLi5jenV2eU95S2ZiQlpKLlBDTjdFNW5vcTVOSkhhTC4iLCJjcmVhdGVkX2F0IjoiMjAyNC0wNS0yMiAxMjoxNDoyMSIsImlhdCI6MTcyMTk0NzQ4MSwiZXhwIjoxNzIyNTUyMjgxfQ.TnZoh7UKUXhX2ePipQCpA0hfeeJrKkA2NqfzhTg0Eus"
+    }
+    ```
+
+  - **Response:**
+    ```json
+    {
+      "user_id": 16,
+      "username": "joaquin",
+      "fullname": "Joaquin Trujiilo",
+      "password": "$2b$10$wj89IXy/i.nIQRYi1CvzG..czuvyOyKfbBZJ.PCN7E5noq5NJHaL.",
+      "created_at": "2024-05-22 12:14:21",
+      "iat": 1721947481,
+      "exp": 1722552281
+    }
+    ```
 
 ### Chats
 
