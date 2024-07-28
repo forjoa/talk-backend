@@ -8,7 +8,7 @@ import userRoutes from './routes/userRoutes.js';
 import './config/database.js';
 import { config } from 'dotenv';
 
-config()
+config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,7 +21,13 @@ app.use('/api/chats', chatRoutes);
 app.use('/api/users', userRoutes);
 
 const httpServer = createServer(app);
-const io = new Server(httpServer);
+const io = new Server(httpServer, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
+
 import socketHandlers from './socket.js';
 socketHandlers(io);
 
