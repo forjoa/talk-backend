@@ -201,6 +201,7 @@ This is a backend API for Talk App built with Node.js, Express, and Socket.io. I
     ```
 
 - **PUT /api/users/update**
+
   - **Description:** Updates a user's profile information.
   - **Request Body:**
     ```json
@@ -208,6 +209,16 @@ This is a backend API for Talk App built with Node.js, Express, and Socket.io. I
       "user_id": 1,
       "username": "newUsername",
       "fullname": "New Fullname"
+    }
+    ```
+
+- **POST /api/users/getOtherUsername**
+  - **Description:** Get all the information of the other user participating in the conversation.
+  - **Request Body:**
+    ```json
+    {
+      "conversation_id": 16,
+      "current_user_id": 1
     }
     ```
 
